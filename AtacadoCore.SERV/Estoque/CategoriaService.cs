@@ -2,7 +2,7 @@
 using AtacadoCore.MAPA.Estoque;
 using AtacadoCore.POCO.Estoque;
 using AtacadoCore.REPO.Estoque;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 namespace AtacadoCore.SERV.Estoque
 {
     public class CategoriaService :
-       GenericService<DbContext, Categorium, CategoriaPoco>,
-       IService<CategoriaPoco>
+        GenericService<DbContext, Categorium, CategoriaPoco>,
+        IService<CategoriaPoco>
     {
         public CategoriaService(DbContext contexto)
         {

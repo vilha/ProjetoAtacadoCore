@@ -2,7 +2,7 @@
 using AtacadoCore.MAPA.Estoque;
 using AtacadoCore.POCO.Estoque;
 using AtacadoCore.REPO.Estoque;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -59,6 +59,5 @@ namespace AtacadoCore.SERV.Estoque
             ProdutoPoco novoPoco = this.mapa.GetMapper.Map<ProdutoPoco>(nova);
             return novoPoco;
         }
-
     }
 }

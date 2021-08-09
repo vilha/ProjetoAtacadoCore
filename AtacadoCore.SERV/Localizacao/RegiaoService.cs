@@ -1,8 +1,8 @@
-﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.MAPA.Estoque;
-using AtacadoCore.POCO.Estoque;
-using AtacadoCore.REPO.Estoque;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+﻿using AtacadoCore.POCO.Localizacao;
+using AtacadoCore.DAL.Models;
+using AtacadoCore.MAPA.Localizacao;
+using AtacadoCore.REPO.Localizacao;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,11 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtacadoCore.SERV.Estoque
+namespace AtacadoCore.SERV.Localizacao
 {
     public class RegiaoService :
-      GenericService<DbContext, Regiao, RegiaoPoco>,
-      IService<RegiaoPoco>
+        GenericService<DbContext, Regiao, RegiaoPoco>,
+        IService<RegiaoPoco>
     {
         public RegiaoService(DbContext contexto)
         {
@@ -24,7 +24,7 @@ namespace AtacadoCore.SERV.Estoque
 
         public RegiaoPoco Obter(int id)
         {
-            Regiao dominio = this.repositorio.Read(regiao => regiao.RegiaoId == id);
+            Regiao dominio = this.repositorio.Read(regiao => regiao.RegiaoID == id);
             RegiaoPoco poco = this.mapa.GetMapper.Map<RegiaoPoco>(dominio);
             return poco;
         }
@@ -46,7 +46,7 @@ namespace AtacadoCore.SERV.Estoque
 
         public RegiaoPoco Excluir(int id)
         {
-            Regiao regiao = this.repositorio.Read(reg => reg.RegiaoId == id);
+            Regiao regiao = this.repositorio.Read(reg => reg.RegiaoID == id);
             RegiaoPoco poco = this.mapa.GetMapper.Map<RegiaoPoco>(regiao);
             this.repositorio.Delete(regiao);
             return poco;
@@ -60,6 +60,10 @@ namespace AtacadoCore.SERV.Estoque
             return novoPoco;
         }
 
-       
+        public void Dispose()
+        {
+            this.repositorio = null;
+            this.mapa = null;
+        }
     }
 }

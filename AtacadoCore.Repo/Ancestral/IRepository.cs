@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtacadoCore.Repo.Ancestral
+namespace AtacadoCore.REPO.Ancestral
 {
     public interface IRepository<TDomain> where TDomain : class
     {

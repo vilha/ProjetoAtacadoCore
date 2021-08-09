@@ -1,5 +1,5 @@
 ﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.Repo.Ancestral;
+using AtacadoCore.REPO.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

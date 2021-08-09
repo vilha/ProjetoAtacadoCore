@@ -18,7 +18,7 @@ namespace AtacadoCore.DAL.Models
 
         [Key]
         [Column("MicroregiaoID")]
-        public int MicroregiaoId { get; set; }
+        public int MicroregiaoID { get; set; }
         [Required]
         [StringLength(100)]
         public string Descricao { get; set; }

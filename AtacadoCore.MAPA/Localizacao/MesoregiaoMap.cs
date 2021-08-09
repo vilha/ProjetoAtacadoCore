@@ -1,6 +1,6 @@
-﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.MAPA.Ancestral;
+﻿using AtacadoCore.MAPA.Ancestral;
 using AtacadoCore.POCO.Localizacao;
+using AtacadoCore.DAL.Models;
 using AutoMapper;
 using System;
 using System.Collections.Generic;

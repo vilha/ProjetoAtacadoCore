@@ -1,5 +1,5 @@
 ﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.Repo.Ancestral;
+using AtacadoCore.REPO.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace AtacadoCore.REPO.Localizacao
 {
-    public class EstadoRepository : GenericRepository<DbContext, UnidadesFederacao>
+    public class UFRepository : GenericRepository<DbContext, UnidadesFederacao>
     {
-        public EstadoRepository(DbContext contexto) : base(contexto)
+        public UFRepository(DbContext contexto) : base(contexto)
         { }
     }
 }

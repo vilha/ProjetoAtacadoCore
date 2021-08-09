@@ -1,5 +1,5 @@
 ﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.Repo.Ancestral;
+using AtacadoCore.REPO.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 
 namespace AtacadoCore.REPO.Estoque
 {
-    public class SubcategoriaRepository :
-        GenericRepository<DbContext, Subcategorium>
-
+    public class SubcategoriaRepository : GenericRepository<DbContext, Subcategorium>
     {
         public SubcategoriaRepository(DbContext contexto) : base(contexto)
         { }

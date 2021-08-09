@@ -1,6 +1,6 @@
 ﻿using AtacadoCore.DAL.Models;
 using AtacadoCore.MAPA.Ancestral;
-using AtacadoCore.POCO.Estoque;
+using AtacadoCore.POCO.Localizacao;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtacadoCore.MAPA.Estoque
+namespace AtacadoCore.MAPA.Localizacao
 {
     public class RegiaoMap : BaseMapping
     {

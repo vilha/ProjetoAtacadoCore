@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtacadoCore.POCO.Estoque
+namespace AtacadoCore.POCO.Localizacao
 {
    public class RegiaoPoco
     {

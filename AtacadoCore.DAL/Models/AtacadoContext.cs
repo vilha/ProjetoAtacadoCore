@@ -105,19 +105,19 @@ namespace AtacadoCore.DAL.Models
 
                 entity.HasOne(d => d.Mesoregiao)
                     .WithMany(p => p.Municipios)
-                    .HasForeignKey(d => d.MesoregiaoId)
+                    .HasForeignKey(d => d.MesoregiaoID)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Municipio_Mesoregiao");
 
                 entity.HasOne(d => d.Microregiao)
                     .WithMany(p => p.Municipios)
-                    .HasForeignKey(d => d.MicroregiaoId)
+                    .HasForeignKey(d => d.MicroregiaoID)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Municipio_Microregiao");
 
                 entity.HasOne(d => d.Uf)
                     .WithMany(p => p.Municipios)
-                    .HasForeignKey(d => d.Ufid)
+                    .HasForeignKey(d => d.UfID)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Municipio_UnidadesFederacao");
             });
@@ -186,13 +186,13 @@ namespace AtacadoCore.DAL.Models
 
                 entity.Property(e => e.Descricao).IsUnicode(false);
 
-                entity.Property(e => e.SiglaUf)
+                entity.Property(e => e.SiglaUF)
                     .IsUnicode(false)
                     .IsFixedLength(true);
 
                 entity.HasOne(d => d.Regiao)
                     .WithMany(p => p.UnidadesFederacaos)
-                    .HasForeignKey(d => d.RegiaoId)
+                    .HasForeignKey(d => d.RegiaoID)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UnidadesFederacao_Regiao");
             });

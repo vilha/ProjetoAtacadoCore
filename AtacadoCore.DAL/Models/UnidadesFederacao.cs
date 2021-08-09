@@ -19,20 +19,20 @@ namespace AtacadoCore.DAL.Models
 
         [Key]
         [Column("UFID")]
-        public int Ufid { get; set; }
+        public int UfID { get; set; }
         [Required]
         [StringLength(100)]
         public string Descricao { get; set; }
         [Required]
         [Column("SiglaUF")]
         [StringLength(2)]
-        public string SiglaUf { get; set; }
+        public string SiglaUF { get; set; }
         [Column("RegiaoID")]
-        public int RegiaoId { get; set; }
+        public int RegiaoID { get; set; }
         [Column("datainsert", TypeName = "datetime")]
         public DateTime? Datainsert { get; set; }
 
-        [ForeignKey(nameof(RegiaoId))]
+        [ForeignKey(nameof(RegiaoID))]
         [InverseProperty("UnidadesFederacaos")]
         public virtual Regiao Regiao { get; set; }
         [InverseProperty(nameof(Mesoregiao.Uf))]

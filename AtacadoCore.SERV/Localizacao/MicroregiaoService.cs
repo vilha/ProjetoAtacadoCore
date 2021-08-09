@@ -1,8 +1,8 @@
-﻿using AtacadoCore.DAL.Models;
+﻿using AtacadoCore.POCO.Localizacao;
+using AtacadoCore.DAL.Models;
 using AtacadoCore.MAPA.Localizacao;
-using AtacadoCore.POCO.Localizacao;
 using AtacadoCore.REPO.Localizacao;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 namespace AtacadoCore.SERV.Localizacao
 {
     public class MicroregiaoService :
-       GenericService<DbContext, Microregiao, MicroregiaoPoco>,
-       IService<MicroregiaoPoco>
+        GenericService<DbContext, Microregiao, MicroregiaoPoco>,
+        IService<MicroregiaoPoco>
     {
         public MicroregiaoService(DbContext contexto)
         {
@@ -24,7 +24,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MicroregiaoPoco Obter(int id)
         {
-            Microregiao dominio = this.repositorio.Read(mic => mic.MicroregiaoId == id);
+            Microregiao dominio = this.repositorio.Read(mic => mic.MicroregiaoID == id);
             MicroregiaoPoco poco = this.mapa.GetMapper.Map<MicroregiaoPoco>(dominio);
             return poco;
         }
@@ -46,7 +46,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MicroregiaoPoco Excluir(int id)
         {
-            Microregiao micro = this.repositorio.Read(reg => reg.MicroregiaoId == id);
+            Microregiao micro = this.repositorio.Read(reg => reg.MicroregiaoID == id);
             MicroregiaoPoco poco = this.mapa.GetMapper.Map<MicroregiaoPoco>(micro);
             this.repositorio.Delete(micro);
             return poco;
@@ -60,6 +60,10 @@ namespace AtacadoCore.SERV.Localizacao
             return novoPoco;
         }
 
-     
+        public void Dispose()
+        {
+            this.repositorio = null;
+            this.mapa = null;
+        }
     }
 }

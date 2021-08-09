@@ -56,57 +56,96 @@
             <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
+        <member name="T:AtacadoCoreApi.Controllers.ProdutoController">
             <summary>
             
+            </summary>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
+            <summary>
+            Construtor da classe.
             </summary>
             <param name="contexto"></param>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.Get">
+        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Get(System.Int32)">
             <summary>
-            
+            Obter registro por chave primaria.
             </summary>
+            <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.Get(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Post(AtacadoCore.POCO.Estoque.ProdutoPoco)">
             <summary>
-            
+            Incluir novo registro.
             </summary>
-            <param name="id"></param>
+            <param name="poco">Objeto a ser incluido.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.Post(AtacadoCore.POCO.Localizacao.EstadoPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Put(AtacadoCore.POCO.Estoque.ProdutoPoco)">
             <summary>
-            
+            Atualizar um registro.
             </summary>
-            <param name="poco"></param>
+            <param name="poco">Objeto a ser atualizado.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.Put(AtacadoCore.POCO.Localizacao.EstadoPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Delete(System.Int32)">
             <summary>
-            
+            Excluir um registro.
             </summary>
-            <param name="poco"></param>
+            <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.EstadoController.Delete(System.Int32)">
+        <member name="T:AtacadoCoreApi.Controllers.SubcategoriaController">
             <summary>
-            
+            Serviço de Subcategoria.
             </summary>
-            <param name="id"></param>
-            <returns></returns>
         </member>
-        <member name="T:AtacadoCoreApi.Controllers.GenericBaseController`1">
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
             <summary>
-            
-            </summary>
-            <typeparam name="TPoco"></typeparam>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.GenericBaseController`1.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
-            <summary>
-            
+            Construtor da classe.
             </summary>
             <param name="contexto"></param>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Get">
+            <summary>
+            Obter todos os registros.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Get(System.Int32)">
+            <summary>
+            Obter registro por chave primaria.
+            </summary>
+            <param name="id">Chave primaria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.GetProdutosPorID(System.Int32)">
+            <summary>
+            Obter produtos por id da subcategoria.
+            </summary>
+            <param name="subcatid">Chave primaria da subcategoria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Post(AtacadoCore.POCO.Estoque.SubcategoriaPoco)">
+            <summary>
+            Incluir novo registro.
+            </summary>
+            <param name="poco">Objeto a ser incluido.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Put(AtacadoCore.POCO.Estoque.SubcategoriaPoco)">
+            <summary>
+            Atualizar um registro.
+            </summary>
+            <param name="poco">Objeto a ser atualizado.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Delete(System.Int32)">
+            <summary>
+            Excluir um registro.
+            </summary>
+            <param name="id">Chave primaria.</param>
+            <returns></returns>
         </member>
         <member name="T:AtacadoCoreApi.Controllers.MesoregiaoController">
             <summary>
@@ -258,136 +297,118 @@
             <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="T:AtacadoCoreApi.Controllers.ProdutoController">
+        <member name="T:AtacadoCoreApi.Controllers.RegiaoController">
             <summary>
-            
+            Serviço de Regiao.
             </summary>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
             <summary>
             Construtor da classe.
             </summary>
             <param name="contexto"></param>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Get(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Get">
+            <summary>
+            Obter todos os registros.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Get(System.Int32)">
             <summary>
             Obter registro por chave primaria.
             </summary>
             <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Post(AtacadoCore.POCO.Estoque.ProdutoPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.GetEstadosPorID(System.Int32)">
+            <summary>
+            Obter estados por chave primaria da regiao.
+            </summary>
+            <param name="regiaoid">Chave primaria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Post(AtacadoCore.POCO.Localizacao.RegiaoPoco)">
             <summary>
             Incluir novo registro.
             </summary>
             <param name="poco">Objeto a ser incluido.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Put(AtacadoCore.POCO.Estoque.ProdutoPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Put(AtacadoCore.POCO.Localizacao.RegiaoPoco)">
             <summary>
             Atualizar um registro.
             </summary>
             <param name="poco">Objeto a ser atualizado.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.ProdutoController.Delete(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Delete(System.Int32)">
             <summary>
             Excluir um registro.
             </summary>
             <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="T:AtacadoCoreApi.Controllers.RegiaoController">
+        <member name="T:AtacadoCoreApi.Controllers.UFController">
             <summary>
-            
+            Serviço de Estadoes.
             </summary>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
-            <summary>
-            
-            </summary>
-            <param name="contexto"></param>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Get">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Get(System.Int32)">
-            <summary>
-            
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Post(AtacadoCore.POCO.Estoque.RegiaoPoco)">
-            <summary>
-            
-            </summary>
-            <param name="poco"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Put(AtacadoCore.POCO.Estoque.RegiaoPoco)">
-            <summary>
-            
-            </summary>
-            <param name="poco"></param>
-            <returns></returns>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.RegiaoController.Delete(System.Int32)">
-            <summary>
-            
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:AtacadoCoreApi.Controllers.SubcategoriaController">
-            <summary>
-            Serviço de Subcategoria.
-            </summary>
-        </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.#ctor(AtacadoCore.DAL.Models.AtacadoContext)">
             <summary>
             Construtor da classe.
             </summary>
             <param name="contexto"></param>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Get">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.Get">
             <summary>
             Obter todos os registros.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Get(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.Get(System.Int32)">
             <summary>
             Obter registro por chave primaria.
             </summary>
             <param name="id">Chave primaria.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.GetProdutosPorID(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.GetMesoregiaoPorID(System.Int32)">
             <summary>
-            Obter produtos por id da subcategoria.
+            Obter mesoregião por id do estado.
             </summary>
-            <param name="subcatid">Chave primaria da subcategoria.</param>
+            <param name="ufid">Chave primaria do estado.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Post(AtacadoCore.POCO.Estoque.SubcategoriaPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.GetMunicipiosPorID(System.Int32)">
+            <summary>
+            Obter municipios por id do estado.
+            </summary>
+            <param name="ufid">Chave primaria do estado.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.UFController.GetMunicipiosPorSigla(System.String)">
+            <summary>
+            Obter municipios por sigla do estado.
+            </summary>
+            <param name="siglauf">Sigla do estado.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoCoreApi.Controllers.UFController.Post(AtacadoCore.POCO.Localizacao.UFPoco)">
             <summary>
             Incluir novo registro.
             </summary>
             <param name="poco">Objeto a ser incluido.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Put(AtacadoCore.POCO.Estoque.SubcategoriaPoco)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.Put(AtacadoCore.POCO.Localizacao.UFPoco)">
             <summary>
             Atualizar um registro.
             </summary>
             <param name="poco">Objeto a ser atualizado.</param>
             <returns></returns>
         </member>
-        <member name="M:AtacadoCoreApi.Controllers.SubcategoriaController.Delete(System.Int32)">
+        <member name="M:AtacadoCoreApi.Controllers.UFController.Delete(System.Int32)">
             <summary>
             Excluir um registro.
             </summary>

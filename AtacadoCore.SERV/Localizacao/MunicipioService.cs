@@ -1,8 +1,8 @@
-﻿using AtacadoCore.DAL.Models;
+﻿using AtacadoCore.POCO.Localizacao;
+using AtacadoCore.DAL.Models;
 using AtacadoCore.MAPA.Localizacao;
-using AtacadoCore.POCO.Localizacao;
 using AtacadoCore.REPO.Localizacao;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,6 @@ namespace AtacadoCore.SERV.Localizacao
         GenericService<DbContext, Municipio, MunicipioPoco>,
         IService<MunicipioPoco>
     {
-
         public MunicipioService(DbContext contexto)
         {
             this.repositorio = new MunicipioRepository(contexto);
@@ -25,7 +24,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MunicipioPoco Obter(int id)
         {
-            Municipio dominio = this.repositorio.Read(mun => mun.MunicipioId == id);
+            Municipio dominio = this.repositorio.Read(mun => mun.MunicipioID == id);
             MunicipioPoco poco = this.mapa.GetMapper.Map<MunicipioPoco>(dominio);
             return poco;
         }
@@ -47,7 +46,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MunicipioPoco Excluir(int id)
         {
-            Municipio mun = this.repositorio.Read(reg => reg.MunicipioId == id);
+            Municipio mun = this.repositorio.Read(reg => reg.MunicipioID == id);
             MunicipioPoco poco = this.mapa.GetMapper.Map<MunicipioPoco>(mun);
             this.repositorio.Delete(mun);
             return poco;
@@ -61,6 +60,10 @@ namespace AtacadoCore.SERV.Localizacao
             return novoPoco;
         }
 
-       
+        public void Dispose()
+        {
+            this.repositorio = null;
+            this.mapa = null;
+        }
     }
 }

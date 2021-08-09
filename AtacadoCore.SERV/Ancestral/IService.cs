@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace AtacadoCore.SERV.Ancestral
 {
-    namespace Atacado.Service.Ancestor
+    public interface IService<T>
+        where T : class
     {
-        public interface IService<T>
-             where T : class
-        {
-            T Incluir(T poco);
+        T Incluir(T poco);
 
-            T Obter(int id);
+        T Obter(int id);
 
-            T Atualizar(T poco);
+        IEnumerable<T> ObterTodos();
 
-            T Excluir(int id);
+        T Atualizar(T poco);
 
-            IEnumerable<T> ObterTodos();
-        }
+        T Excluir(int id);
     }
 }

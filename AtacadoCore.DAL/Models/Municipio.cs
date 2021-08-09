@@ -13,7 +13,7 @@ namespace AtacadoCore.DAL.Models
     {
         [Key]
         [Column("MunicipioID")]
-        public int MunicipioId { get; set; }
+        public int MunicipioID { get; set; }
         [Column("IBGE6")]
         public int Ibge6 { get; set; }
         [Column("IBGE7")]
@@ -22,11 +22,11 @@ namespace AtacadoCore.DAL.Models
         [StringLength(100)]
         public string Descricao { get; set; }
         [Column("MesoregiaoID")]
-        public int MesoregiaoId { get; set; }
+        public int MesoregiaoID { get; set; }
         [Column("MicroregiaoID")]
-        public int MicroregiaoId { get; set; }
+        public int MicroregiaoID { get; set; }
         [Column("UFID")]
-        public int Ufid { get; set; }
+        public int UfID { get; set; }
         public int? Populacao { get; set; }
         [Column("CEP")]
         public int? Cep { get; set; }
@@ -34,13 +34,13 @@ namespace AtacadoCore.DAL.Models
         [StringLength(2)]
         public string SiglaUf { get; set; }
 
-        [ForeignKey(nameof(MesoregiaoId))]
+        [ForeignKey(nameof(MesoregiaoID))]
         [InverseProperty("Municipios")]
         public virtual Mesoregiao Mesoregiao { get; set; }
-        [ForeignKey(nameof(MicroregiaoId))]
+        [ForeignKey(nameof(MicroregiaoID))]
         [InverseProperty("Municipios")]
         public virtual Microregiao Microregiao { get; set; }
-        [ForeignKey(nameof(Ufid))]
+        [ForeignKey(nameof(UfID))]
         [InverseProperty(nameof(UnidadesFederacao.Municipios))]
         public virtual UnidadesFederacao Uf { get; set; }
     }

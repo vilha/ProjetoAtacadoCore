@@ -11,20 +11,20 @@ using System.Threading.Tasks;
 namespace AtacadoCoreApi.Controllers
 {
     /// <summary>
-    /// Serviço de Estadoes.
+    /// Serviço de Regiao.
     /// </summary>
-    [Route("atacado/localizacao/mesoregiao")]
+    [Route("atacado/localizacao/regioes")]
     [ApiController]
-    public class MesoregiaoController : GenericBaseController<MesoregiaoPoco>
+    public class RegiaoController : GenericBaseController<RegiaoPoco>
     {
         /// <summary>
         /// Construtor da classe.
         /// </summary>
         /// <param name="contexto"></param>
-        public MesoregiaoController(AtacadoContext contexto) :
+        public RegiaoController(AtacadoContext contexto) :
             base(contexto)
         {
-            this.servico = new MesoregiaoService(this.contexto);
+            this.servico = new RegiaoService(this.contexto);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace AtacadoCoreApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("")]
-        public List<MesoregiaoPoco> Get()
+        public List<RegiaoPoco> Get()
         {
             return this.servico.ObterTodos().ToList();
         }
@@ -45,39 +45,24 @@ namespace AtacadoCoreApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("{id:int}")]
-        public MesoregiaoPoco Get(int id)
+        public RegiaoPoco Get([FromRoute] int id)
         {
             return this.servico.Obter(id);
         }
 
         /// <summary>
-        /// Obter microregioes por id da mesoregiao.
+        /// Obter estados por chave primaria da regiao.
         /// </summary>
-        /// <param name="mesid">Chave primaria.</param>
+        /// <param name="regiaoid">Chave primaria.</param>
         /// <returns></returns>
         [HttpGet]
-        [Route("{mesid:int}/microregioes")]
-        public List<MicroregiaoPoco> GetMicroregioesPorID(int mesid)
+        [Route("{regiaoid:int}/estados")]
+        public List<UFPoco> GetEstadosPorID([FromRoute] int regiaoid)
         {
-            MicroregiaoService srv = new MicroregiaoService(this.contexto);
-            List<MicroregiaoPoco> mesoregiaoPoco = srv.ObterTodos()
-                .Where(mes => mes.MesoregiaoID == mesid).ToList();
-            return mesoregiaoPoco;
-        }
-
-        /// <summary>
-        /// Obter municipios por id da mesoregiao.
-        /// </summary>
-        /// <param name="mesid">Chave primaria.</param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("{mesid:int}/municipios")]
-        public List<MunicipioPoco> GetMunicipiosPorID(int mesid)
-        {
-            MunicipioService srv = new MunicipioService(this.contexto);
-            List<MunicipioPoco> municipioPoco = srv.ObterTodos()
-                .Where(mes => mes.MesoregiaoID == mesid).ToList();
-            return municipioPoco;
+            UFService srv = new UFService(this.contexto);
+            List<UFPoco> ufPoco = srv.ObterTodos()
+                .Where(uf => uf.RegiaoID == regiaoid).ToList();
+            return ufPoco;
         }
 
         /// <summary>
@@ -87,7 +72,7 @@ namespace AtacadoCoreApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("")]
-        public MesoregiaoPoco Post([FromBody] MesoregiaoPoco poco)
+        public RegiaoPoco Post([FromBody] RegiaoPoco poco)
         {
             return this.servico.Incluir(poco);
         }
@@ -99,7 +84,7 @@ namespace AtacadoCoreApi.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("")]
-        public MesoregiaoPoco Put([FromBody] MesoregiaoPoco poco)
+        public RegiaoPoco Put([FromBody] RegiaoPoco poco)
         {
             return this.servico.Atualizar(poco);
         }
@@ -111,7 +96,7 @@ namespace AtacadoCoreApi.Controllers
         /// <returns></returns>
         [HttpDelete]
         [Route("{id:int}")]
-        public MesoregiaoPoco Delete(int id)
+        public RegiaoPoco Delete([FromRoute] int id)
         {
             return this.servico.Excluir(id);
         }

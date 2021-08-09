@@ -19,7 +19,6 @@ namespace AtacadoCore.DAL.Models
 
         [Key]
         [Column("MesoregiaoID")]
-        public int MesoregiaoId { get; set; }
         public int MesoregiaoID { get; set; }
         [Required]
         [StringLength(100)]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AtacadoCore.POCO.Localizacao
 {
-    public class EstadoPoco
+    public class UFPoco
     {
         public int RegiaoID { get; set; }
 

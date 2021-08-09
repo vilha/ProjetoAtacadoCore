@@ -1,8 +1,8 @@
-﻿using AtacadoCore.DAL.Models;
+﻿using AtacadoCore.POCO.Localizacao;
+using AtacadoCore.DAL.Models;
 using AtacadoCore.MAPA.Localizacao;
-using AtacadoCore.POCO.Localizacao;
 using AtacadoCore.REPO.Localizacao;
-using AtacadoCore.SERV.Ancestral.Atacado.Service.Ancestor;
+using AtacadoCore.SERV.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MesoregiaoPoco Obter(int id)
         {
-            Mesoregiao dominio = this.repositorio.Read(mes => mes.MesoregiaoId == id);
+            Mesoregiao dominio = this.repositorio.Read(mes => mes.MesoregiaoID == id);
             MesoregiaoPoco poco = this.mapa.GetMapper.Map<MesoregiaoPoco>(dominio);
             return poco;
         }
@@ -46,7 +46,7 @@ namespace AtacadoCore.SERV.Localizacao
 
         public MesoregiaoPoco Excluir(int id)
         {
-            Mesoregiao meso = this.repositorio.Read(reg => reg.MesoregiaoId == id);
+            Mesoregiao meso = this.repositorio.Read(reg => reg.MesoregiaoID == id);
             MesoregiaoPoco poco = this.mapa.GetMapper.Map<MesoregiaoPoco>(meso);
             this.repositorio.Delete(meso);
             return poco;
@@ -59,8 +59,5 @@ namespace AtacadoCore.SERV.Localizacao
             MesoregiaoPoco novoPoco = this.mapa.GetMapper.Map<MesoregiaoPoco>(nova);
             return novoPoco;
         }
-
-    
-
     }
 }

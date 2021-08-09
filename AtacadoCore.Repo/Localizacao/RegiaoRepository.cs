@@ -1,5 +1,5 @@
 ﻿using AtacadoCore.DAL.Models;
-using AtacadoCore.Repo.Ancestral;
+using AtacadoCore.REPO.Ancestral;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtacadoCore.REPO.Estoque
+namespace AtacadoCore.REPO.Localizacao
 {
     public class RegiaoRepository : GenericRepository<DbContext, Regiao>
     {

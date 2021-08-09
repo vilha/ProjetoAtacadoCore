@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace AtacadoCore.MAPA.Localizacao
 {
-    public class EstadoMapping : BaseMapping
+    public class UFMap : BaseMapping
     {
-        public EstadoMapping()
+        public UFMap()
         {
             var configuration = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<UnidadesFederacao, EstadoPoco>()
+                cfg.CreateMap<UnidadesFederacao, UFPoco>()
                     .ForMember(dst => dst.DataInclusao, map => map.MapFrom(src => src.Datainsert));
 
-                cfg.CreateMap<EstadoPoco, UnidadesFederacao>()
+                cfg.CreateMap<UFPoco, UnidadesFederacao>()
                     .ForMember(dst => dst.Datainsert, map => map.MapFrom(src => (src.DataInclusao.HasValue ? src.DataInclusao.Value : DateTime.Now)));
             });
 
